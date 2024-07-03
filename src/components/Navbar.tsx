@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { GoPerson } from "react-icons/go";
 import { HiOutlineBars3 } from "react-icons/hi2";
@@ -40,9 +41,9 @@ const Navbar = () => {
                 <h1>여 백</h1>
             </div>
             <div className="navbar-links-container">
-                <a href="">메인</a>
+                <Link to="/">메인</Link>
                 <a href="">라이프</a>
-                <a href="">커뮤니티</a>
+                <Link to="/community">커뮤니티</Link>
                 <a href="">
                     <ShoppingCartRoundedIcon className="navbar-cart-icon" />
                 </a>

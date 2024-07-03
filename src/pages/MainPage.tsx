@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const MainPage = () => {
     return (
-        <div>
-            <h1>여   백</h1>
+        <div className="home-container">
+            <Navbar/>
         </div>
     );
 };
