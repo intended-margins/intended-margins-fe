@@ -3,13 +3,13 @@ import MainPage from './pages/MainPage';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
+import Home from './components/Home';
+
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<MainPage />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div className='App'>
+      <Home/>
+    </div>
   );
 };
 
