@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { GoPerson } from "react-icons/go";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import PhoneRounded  from "@mui/icons-material/PhoneRounded";
+import Weekend from "@mui/icons-material/Weekend";
+import Forum  from "@mui/icons-material/Forum";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 import {
-    Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText
+    Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText
 } from "@mui/material";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 
@@ -22,11 +22,11 @@ const Navbar = () => {
         },
         {
             text: "라이프",
-            icon: <InfoIcon/>
+            icon: <Weekend/>
         },
         {
             text: "커뮤니티",
-            icon: <PhoneRounded/>
+            icon: <Forum/>
         },
         {
             text: "상품",
@@ -51,6 +51,20 @@ const Navbar = () => {
             <div className="navbar-menu-container">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
             </div>
+            <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+                <Box sx={{ width:250 }} role="presentation" onClick={() => setOpenMenu(false)} onKeyDown={() => setOpenMenu(false)}>
+                    <List>
+                        {menuOptions.map((item) => (
+                            <ListItem key = {item.text} disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>{item.icon}</ListItemIcon>
+                                    <ListItemText primary={item.text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+            </Drawer>
         </nav>
     );
 };
